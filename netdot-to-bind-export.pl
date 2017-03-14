@@ -20,9 +20,6 @@ if ($? != -1) {
 print "dump success... \n";
 system('/usr/local/netdot/bin/exporter.pl -t BIND -z 128.90.202.in-addr.arpa,129.90.202.in-addr.arpa,131.90.202.in-addr.arpa,132.90.202.in-addr.arpa,149.90.202.in-addr.arpa,158.90.202.in-addr.arpa,134.90.202.in-addr.arpa,133.90.202.in-addr.arpa,130.90.202.in-addr.arpa,153.90.202.in-addr.arpa,phopenix.net,137.90.202.in-addr.arpa,136.90.202.in-addr.arpa,136.90.202.in-addr.arpa,135.90.202.in-addr.arpa,172.32.198.in-addr.arpa');
 
-#Create a diff checker using hash of old file and new file
-#if comp_md5 {
-
 system('/usr/local/netdot/bin/exporter.pl -t BIND -z pregi.net ');
 print "command success... \n";
 print "signing zone files... \n";
@@ -49,8 +46,6 @@ close $fh;
 #system('/usr/sbin/dnssec-signzone -x -o pregi.net -k $ksk $pregi $zsk');
 #system('/usr/sbin/dnssec-signzone -x -o pregi.net -k /etc/nsd/keys/Kpregi.net.+007+44408.key /etc/nsd/keys/Kpregi.net.+007+58746.key');
 
-#}
-#end comp_md5 subroutine
 
 #system('/usr/sbin/nsdc rebuild');
 #system('/usr/sbin/nsdc reload');
@@ -62,7 +57,6 @@ else
 {
 print "command failed... \n";
 }
-
 
 sub random_hash {
    my ($ash,$ml) = ('',((defined$_[0]&&$_[0]>0)?$_[0]:4));
