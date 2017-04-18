@@ -20,11 +20,16 @@ open (my $ph, "<$prevhash") or die "Cound not open file '$prevhash' $!";
 my $first = <$ph>;
 close $ph;
 open (my $ph, ">$prevhash") or die "Cound not open file '$prevhash' $!";
-if ( $md5 == $first ) { 
-print "Same HASH!!!";
-} else { 
-print $ph "$md5";
+#if ( $md5 == $first ) { 
+#print "Same HASH!!!";
+#} else { 
+#print $ph "$md5";
+#}
+
+while ( $md5 != $first ) {
+print "wrong \n";
 }
+
 close $ph;
 
 #open (my $fh, '>>', $pregi) or die "Could not open file '$pregi' $!";
