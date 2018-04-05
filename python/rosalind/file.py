@@ -1,2 +1,2 @@
 def retf():
-    f=open
+    f=open()
