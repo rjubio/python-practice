@@ -1,4 +1,7 @@
 def not_string(str):
-    return "not str"
+    if str[0:3]=='not':
+        return str
+    else:
+        return "not " +str
 
 print not_string("hello")
